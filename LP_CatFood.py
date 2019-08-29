@@ -5,7 +5,7 @@ Authors: Antony Phillips, Dr Stuart Mitchell  2007
 """
 
 # Import PuLP modeler functions
-from pulp import 
+from pulp import *
 #%%
 # Creates a list of the Ingredients
 Ingredients = ['CHICKEN', 'BEEF', 'MUTTON', 'RICE', 'WHEAT', 'GEL']

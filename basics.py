@@ -1,5 +1,15 @@
-##### Basics
+##### Basics #####
 
+# To comment use #
+# To make a new section use #%%
+
+#%%
+### getting and setting current working directory and view their contents
+import os #importing a module
+os.getcwd()
+os.chdir('/Users/Sam/Box/0-Sam/MyGitHub/ISE-3230')
+os.getcwd()
+os.listdir(os.getcwd()) #see the contenets of the current directory
 
 #%%
 2+2  # will not print
@@ -13,7 +23,7 @@ from math import sqrt   # from module import objecte
 sqrt(36)
 #%%
 vol=3 # type integer
-print(vol)
+print(vol) # print needs ()
 "hello world!"
 'hello world!'
 x='hello'
@@ -29,6 +39,26 @@ print('my volume is', vol)
 phrase='hello '+'world'
 print(phrase)
 
+#%% clearing console, deleting variable
+clear() # clear console
+
+y=1
+z=2
+del y, z # to remove variable(s), note that they should exist, otherwise error
+
+# Removing all of the names (including variables)
+def __reset__(): get_ipython().magic('reset -sf')
+__reset__()
+
+# or
+
+import sys
+sys.modules[__name__].__dict__.clear()
+
+#%%
+### Data Structures: [list], (tuple), (set), (dictionary)
+
+#%%
 ### Lists (they are constructed by bracket)
 cities=['NYC','LA','SF']
 cities
@@ -37,9 +67,10 @@ cities[0] #known as slicing (like subsetting in R)
 cities[-1]
 cities.append('CHI')
 cities
-range(10) #similar to sequence() in R
+range(10) #result is a set
 range(3,8) #upto 7
 range(0,20,2)
+print(x)
 new_list=['hello',2,'all',39.5] # don't need to have the same data type, but not recommended
 new_list
 len(new_list)
@@ -66,23 +97,26 @@ my_list.insert(0,5) # where, what
 my_list
 my_list.extend([100,101])
 my_list
-my_list.index(5) # returns index of the argument
+my_list.index(5) # returns index of the argument (index starts at 0)
 
 ages=[12,34,1,3]
 ages.sort()
 ages
 
+#%%
 ### tuple (they are constructed by parantheses)
-my_tuple=(1,2,3) 
+my_tuple=(1,2,3)
+my_tuple
 my_tuple.append(5) # tuples are immutable, they are useful to group pieces of data together
 my_tuple=(23,14,22)
-my_tuple[2]  # tuples are faster than lists
+my_tuple[2]  # tuples are faster than lists (index starts at 0)
 
 my_list=list(my_tuple) #switch btw. list and tuple
 my_list
 my_tuple2=tuple(my_list)
 my_tuple2
 
+#%%
 ### Sets (defined using curly brackets)
 my_set={1,1,1,2,3,3}
 my_set
@@ -93,7 +127,8 @@ my_set1=my_set.copy() #independent copy
 my_set2={3,3,3,4,5,5,6}
 set.intersection(my_set1,my_set2)
 set.union(my_set1,my_set2)
-                          
+ 
+#%%                         
 ### dictionaries (they are constructed by curly brackets) -- key:value
 # keys are immutable, values of any type
 my_dict={'sam':33,'john':22,'edward':20}
@@ -103,7 +138,7 @@ len(my_dict)
 my_dict2=my_dict.copy()  #independent copy
 my_dict2
 
-my_dict.has_key('john')
+'john' in my_dict
 my_dict.clear()
 my_dict
 
@@ -113,6 +148,7 @@ my_dict.keys()
 my_dict.values()
 my_dict.items()
 
+#%%
 ### miscellaneous
 z=True #type boolean
 z
@@ -122,54 +158,51 @@ y=None #type is NoneType
 y
 type(y)
 
-import os
-os.system('cls') # clear console
+#%%
+### logical operators, if/else, loops, etc. (indentations are important)
 
-del y, z # to remove variable(s)
-%reset # to remove all variables
-
-### logical operators (and, or, not)
-x=1
-y=3
+x=0
+y=4
 if x==1 and y==3:
-    print 'first condition satisfied'
+    print('first condition satisfied')
 elif x==1 or y==3:
-    print 'second condition satisfied'
+    print('second condition satisfied')
 else:
-    DoesNotExist() #this function is not defined
+    print('Neither condition satisfied')
 
 ###  some loops
 cities=['NYC','LA','SF','CHI']
 for city in cities:
-    print city
+    print(city)
     
 for i in range(1,10):
-    print 'The inverse of ', i, 'is', 1.0/i
+    print('The inverse of ', i, 'is', 1.0/i)
     
 for letter in 'Hello':
-    print letter
+    print(letter)
 
 for city in cities:
     if city=='NYC':
-            print 'Cool'
+            print('Cool')
     elif city == 'SF': #notice the indentations
-            print 'still cool'
+            print('still cool')
     else:   
-            print 'fine'
+            print('fine')
 
 a = 10
 while a > 0:
-    print a
+    print(a)
     a -= 1
 
 num=2
 for i in [1,2,3,4]:
     if i > num:
-	break
+        break # exits the loop
     else:
-	print i
+        print(i)
 
-###  functions  (are variables are local unless sepcified as global)
+#%%
+###  defining functions  (are variables are local unless sepcified as global)
 def adder(num1,num2):
     ### this function adds num1 to num2 ###
     ans=num1+num2
@@ -177,14 +210,3 @@ def adder(num1,num2):
 
 adder(3,4)
 
-### getting and setting current working directory 
-import os #importing a module
-os.getcwd()
-os.chdir('C:/Users/sdt144/Dropbox/SamPython')
-#os.chdir('C:\\Users\\sdt144\\Dropbox\\SamPython') #both works
-#os.chdir('./Users/Sam/Dropbox/SamPython') #both works
-os.getcwd()
-
-os.listdir(os.getcwd()) #see the contenets of the current directory
-
-import pulp
