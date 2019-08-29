@@ -8,11 +8,14 @@ Created on Tue Aug 27 11:22:18 2019
 Solving the HiTech problem in PuLP
 
 """
-import sys   
-sys.modules[__name__].__dict__.clear()
+#import sys   
+#sys.modules[__name__].__dict__.clear()
+
 #%%
+clear()
 from pulp import *
 pulp.pulpTestAll() # testing pulp
+
 #%%
 prob = LpProblem("HiTech",LpMaximize) # create an LP maximization problem
 x_A = LpVariable("x_A",lowBound=0) # create a variable x_A>=0
@@ -29,4 +32,3 @@ LpStatus[status] # print the solution status
 for v in prob.variables():
     print(v.name, "=", v.varValue)
 print("Total Cost = ", value(prob.objective))
-#%%
