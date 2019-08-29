@@ -1,5 +1,8 @@
 ##### Basics #####
 
+# Following codes are compatible with Python 3
+
+#%%
 # To comment use #
 # To make a new section use #%%
 
