@@ -8,7 +8,7 @@
 
 #%%
 ### getting and setting current working directory and view their contents
-import os #importing a module
+import os # importing a module
 os.getcwd()
 os.chdir('/Users/Sam/Box/0-Sam/MyGitHub/ISE-3230')
 os.getcwd()
@@ -22,7 +22,7 @@ float(5)/6
 #%%
 import math   # import module
 math.sqrt(36)
-from math import sqrt   # from module import objecte
+from math import sqrt   # from 'module' import 'objecte'
 sqrt(36)
 #%%
 vol=3 # type integer
@@ -49,12 +49,7 @@ y=1
 z=2
 del y, z # to remove variable(s), note that they should exist, otherwise error
 
-# Removing all of the names (including variables)
-def __reset__(): get_ipython().magic('reset -sf')
-__reset__()
-
-# or
-
+# Removing all of the names ( variables)
 import sys
 sys.modules[__name__].__dict__.clear()
 
