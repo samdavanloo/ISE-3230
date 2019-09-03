@@ -54,7 +54,7 @@ import sys
 sys.modules[__name__].__dict__.clear()
 
 #%%
-### Data Structures: [list], (tuple), (set), (dictionary)
+### Data Structures: [list], (tuple), {set}, {dictionary}
 
 #%%
 ### Lists (they are constructed by bracket)
