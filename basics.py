@@ -68,10 +68,6 @@ cities[0] # index starts at 0 (known as slicing or subsetting)
 cities[-1]
 cities.append('CHI')
 cities
-range(10) #result is a set
-range(3,8) #upto 7
-range(0,20,2)
-print(x)
 new_list=['hello',2,'all',39.5] # don't need to have the same data type, but not recommended
 new_list
 len(new_list)
@@ -127,6 +123,9 @@ my_tuple2
 my_set={1,1,1,2,3,3}
 my_set
 len(my_set)
+range(10) #result is a set
+range(3,8) #upto 7
+range(0,20,2)
 3 in my_set  
 4 not in my_set    
 my_set1=my_set.copy() #independent copy
