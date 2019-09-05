@@ -15,31 +15,31 @@ os.getcwd()
 os.listdir(os.getcwd()) #see the contenets of the current directory
 
 #%%
-2+2  # will not print
-5/6
-5.0/6
-float(5)/6
-#%%
+myint=7 # type is integer
+myfloat=7.0 # type is float
+myfloat=7.
+myfloat=float(7)
+print(myint+myfloat)
+myint/8
+myfloat/8
 import math   # import module
 math.sqrt(36)
 from math import sqrt   # from 'module' import 'objecte'
 sqrt(36)
-#%%
 vol=3 # type integer
 print(vol) # print needs ()
-"hello world!"
 'hello world!'
-x='hello'
+x='hello' # type is string
 x
 print(x)
-x,y=2,3 #multiple assignment
+x,y=2,3 # multiple assignment
 y,x
 x=y=z=10
 x,y,z
 x=1; y=2
 x, y
 print('my volume is', vol)
-phrase='hello '+'world'
+phrase='hello '+'world' # concatenate strings
 print(phrase)
 
 #%% clearing console, deleting variable
@@ -57,11 +57,14 @@ sys.modules[__name__].__dict__.clear()
 ### Data Structures: [list], (tuple), {set}, {dictionary}
 
 #%%
-### Lists (they are constructed by bracket)
+### 1. Lists [they are constructed by bracket]
+
+# General purpose, most widely used data structure, sequence type, sortable, and mutable. 
+
 cities=['NYC','LA','SF']
 cities
 type(cities)
-cities[0] #known as slicing (like subsetting in R)
+cities[0] # index starts at 0 (known as slicing or subsetting)
 cities[-1]
 cities.append('CHI')
 cities
@@ -102,20 +105,25 @@ ages.sort()
 ages
 
 #%%
-### tuple (they are constructed by parantheses)
+### 2. Tuples (they are constructed by parantheses)
+
+# Immutable (can't add or change), useful for fixed data, faster than lists, sequence type
+
 my_tuple=(1,2,3)
 my_tuple
-my_tuple.append(5) # tuples are immutable, they are useful to group pieces of data together
+my_tuple[0] # tuples are faster than lists (index starts at 0)
 my_tuple=(23,14,22)
-my_tuple[2]  # tuples are faster than lists (index starts at 0)
-
 my_list=list(my_tuple) #switch btw. list and tuple
 my_list
 my_tuple2=tuple(my_list)
 my_tuple2
 
 #%%
-### Sets (defined using curly brackets)
+### 3. Sets {defined using curly brackets}
+
+# Store non-duplicated items, very fast access vs. lists, 
+# math set operations (union, intersection), unordered
+
 my_set={1,1,1,2,3,3}
 my_set
 len(my_set)
@@ -123,12 +131,16 @@ len(my_set)
 4 not in my_set    
 my_set1=my_set.copy() #independent copy
 my_set2={3,3,3,4,5,5,6}
+my_set2 #no duplicates
 set.intersection(my_set1,my_set2)
 set.union(my_set1,my_set2)
  
 #%%                         
-### dictionaries (they are constructed by curly brackets) -- key:value
-# keys are immutable, values of any type
+### 4. Dictionaries {they are constructed by curly brackets} -- key:value
+
+# Key/Value pairs, associative arrays (like Java HashMap), unordered
+# keys are immutable. Values could be of any type.
+
 my_dict={'sam':33,'john':22,'edward':20}
 my_dict
 my_dict['sam']
@@ -159,6 +171,7 @@ type(y)
 #%%
 ### logical operators, if/else, loops, etc. (indentations are important)
 
+### If/else
 x=0
 y=4
 if x==1 and y==3:
@@ -190,7 +203,8 @@ for city in cities:
 a = 10
 while a > 0:
     print(a)
-    a -= 1
+    a -= 1   # a=a-1 (similarly, we have a += 1)
+
 
 num=2
 for i in [1,2,3,4]:
