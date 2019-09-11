@@ -32,7 +32,7 @@ print("Total Cost = ", value(prob.objective))
 # Form: min c^Tx s.t. Ax<=b
 from cvxopt import matrix, solvers
 c=matrix([-2.0,-3.0])
-A=matrix([[1.0,2.0,0.0,-1.0,-1.0],[-2.0,1.0,1.0,-1.0,-1.0]])
+A=matrix([[1.0,2.0,0.0,-1.0,0.0],[-2.0,1.0,1.0,0.0,-1.0]])
 b=matrix([4.0,18.0,10.0,0.0,0.0])
 sol=solvers.lp(c,A,b)
 print(sol['x'])
