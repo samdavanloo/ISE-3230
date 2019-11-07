@@ -9,7 +9,7 @@ Created on Thu Nov  7 10:55:48 2019
 import numpy as np
 import cvxpy as cp
 
-x = cp.Variable((3,1), integer = True) 
+x = cp.Variable((3,1), boolean = True) 
 y = cp.Variable((3,2), nonneg  = True)
 
 constraints = []
