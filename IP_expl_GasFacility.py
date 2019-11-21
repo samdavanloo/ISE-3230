@@ -9,8 +9,8 @@ Created on Thu Nov  7 10:55:48 2019
 import numpy as np
 import cvxpy as cp
 
-x = cp.Variable((3,1), boolean = True) 
-y = cp.Variable((3,2), nonneg  = True)
+x = cp.Variable((3,1), boolean = True) # matrix variable
+y = cp.Variable((3,2), nonneg  = True) # matrix variable
 
 constraints = []
 constraints.append(y[0,0]+y[1,0]+y[2,0]==10)
