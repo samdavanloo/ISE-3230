@@ -32,7 +32,7 @@ print(x.value)
 print("optimal (0.15x1 + 0.2x2 <= 200) dual variable", constraints[0].dual_value)
 print("optimal (0.1x1 + 0.2x2 <= 140) dual variable", constraints[1].dual_value)
 print("optimal (2.5x1 + 4x2 <= 3200) dual variable", constraints[2].dual_value)
-print("optimal (x1 <= 900) dual variable", constraints[3].dual_value)
-print("optimal (x2 <= 600) dual variable", constraints[4].dual_value)
 
-# Finding Reduced Costs
+# Finding Reduced Costs are the negative of the dual variables 
+print("reduced cost for x1 is", (-1)*constraints[3].dual_value)
+print("reduced cost for x2 is", (-1)*constraints[4].dual_value)
