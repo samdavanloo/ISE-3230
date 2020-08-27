@@ -1,24 +1,23 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Spyder Editor
+Created on Thu Aug 27 11:47:24 2020
 
-CVXPY code for electricity production example.
+CVXPY code for HiTech example.
 
-@author: Sam Davanloo
-
+@author: Sam
 """
 
 import cvxpy as cp
 
 x = cp.Variable(2, nonneg  = True) # vector variable
 
-constraints = []
-constraints.append((2/3)*x[0]+x[1]<=18)
-constraints.append(2*x[0]+x[1]>=8)
-constraints.append(x[0]<=12)
-constraints.append(x[1]<=16)
+obj_func=20*x[0]+30*x[1]
 
-obj_func=x[0]+x[1]
+constraints = []
+constraints.append(x[0]>=25)
+constraints.append(4*x[0]+3*x[1]<=240)
+constraints.append(x[0]+2*x[1]<=140)
 
 problem = cp.Problem(cp.Maximize(obj_func), constraints)
 
