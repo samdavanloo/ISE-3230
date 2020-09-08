@@ -8,7 +8,6 @@ CVXPY code for the LP product blend example.
 @author: Sam
 """
 import cvxpy as cp
-import numpy as np
 
 
 X = cp.Variable((2, 2), nonneg  = True)

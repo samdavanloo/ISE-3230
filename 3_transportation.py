@@ -19,7 +19,7 @@ C=np.array([[7,3,8,4],[9,5,6,3],[4,6,9,6]]) # unit shipping costs  (3*4 matrix)
 W=np.array([[6000],[9000],[4000]])          # warehouse availabiliy (column vector)
 R=np.array([[3900,5200,2700,6400]])         # retail outlet demand (row vector)
 
-obj_func=cp.trace(C.T @ X)
+obj_func=cp.trace(C.T @ X)  #.T takes transpose of a matrix, @ represents matrix product, trace sums the diagonal elements
 
 #%% 1. Inputing constraints using two for loops for columns and rows
 
@@ -29,6 +29,7 @@ for j in range(n):
 
 for i in range(m):
     #constraints.append(cp.sum(X[i,:], axis=1)<=W[i]) # axis=1 sums over columns for each row
+    #Ethan Lynagh: The error is the axis=1 in cp.sum, code runs fine when you remove it
     constraints.append(X[i,0]+X[i,1]+X[i,2]+X[i,3]<=W[i])
     
 problem = cp.Problem(cp.Minimize(obj_func), constraints)
@@ -53,7 +54,7 @@ problem.solve(solver=cp.CVXOPT,verbose = True)
 print("obj_func =")
 print(obj_func.value)
 print("X =")
-print(np.round(X.value))   
+print(X.value)   
 
 
  

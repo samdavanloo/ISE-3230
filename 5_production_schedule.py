@@ -9,7 +9,6 @@ CVXPY code for the LP production schedule example.
 """
 
 import cvxpy as cp
-import numpy as np
 
 
 x = cp.Variable(4, nonneg  = True) # vector variable

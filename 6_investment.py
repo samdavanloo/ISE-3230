@@ -9,7 +9,6 @@ CVXPY code for the LP investment example.
 """
 
 import cvxpy as cp
-import numpy as np
 
 x = cp.Variable(5, nonneg  = True) # vector variable
 s = cp.Variable(3, nonneg  = True) # vector variable
