@@ -12,7 +12,7 @@ import cvxpy as cp
 
 
 x = cp.Variable(4, nonneg  = True) # vector variable
-y = cp.Variable(3, nonneg  = True) # vector variable
+y = cp.Variable(2, nonneg  = True) # vector variable
 w = cp.Variable(3, nonneg  = True) # vector variable
 
 
