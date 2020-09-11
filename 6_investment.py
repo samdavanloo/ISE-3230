@@ -28,7 +28,8 @@ constraints.append(x[4]<=75000)
 
 problem = cp.Problem(cp.Maximize(obj_func), constraints)
 
-problem.solve(solver=cp.CVXOPT,verbose = True)
+#problem.solve(solver=cp.CVXOPT,verbose = True)
+problem.solve(solver=cp.GUROBI,verbose = True)
 
 print("obj_func =")
 print(obj_func.value)

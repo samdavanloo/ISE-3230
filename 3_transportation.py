@@ -28,12 +28,13 @@ for j in range(n):
     constraints.append(cp.sum(X[:,j], axis=0, keepdims=True)==R[0,j]) # axis=0 sums over rows for each column
 
 for i in range(m):
-    #constraints.append(cp.sum(X[i,:], axis=1)<=W[i]) # axis=1 sums over columns for each row
-    #Ethan Lynagh: The error is the axis=1 in cp.sum, code runs fine when you remove it
-    constraints.append(X[i,0]+X[i,1]+X[i,2]+X[i,3]<=W[i])
+    constraints.append(cp.sum(X[i,:])<=W[i]) # axis=1 sums over columns for each row
+    #constraints.append(X[i,0]+X[i,1]+X[i,2]+X[i,3]<=W[i])
     
 problem = cp.Problem(cp.Minimize(obj_func), constraints)
-problem.solve(solver=cp.CVXOPT,verbose = True)
+
+#problem.solve(solver=cp.CVXOPT,verbose = True)
+problem.solve(solver=cp.GUROBI,verbose = True)
 
 print("obj_func =")
 print(obj_func.value)
@@ -49,7 +50,9 @@ row_sums = cp.sum(X, axis=1, keepdims=True) # axis=1 sums over columns for each 
 constraints.append(row_sums<=W)
 
 problem = cp.Problem(cp.Minimize(obj_func), constraints)
-problem.solve(solver=cp.CVXOPT,verbose = True)
+
+#problem.solve(solver=cp.CVXOPT,verbose = True)
+problem.solve(solver=cp.GUROBI,verbose = True)
 
 print("obj_func =")
 print(obj_func.value)

@@ -30,7 +30,8 @@ constraints.append(X[1,0]+X[1,1]<=60000)
 
 problem = cp.Problem(cp.Maximize(obj_func), constraints)
 
-problem.solve(solver=cp.CVXOPT,verbose = True) #verbose parameter determines showing/not showing the output
+#problem.solve(solver=cp.CVXOPT,verbose = True) #verbose parameter determines showing/not showing the output
+problem.solve(solver=cp.GUROBI,verbose = True)
 
 print("obj_func =")
 print(obj_func.value)
