@@ -11,7 +11,6 @@ import cvxpy as cp
 
 x = cp.Variable(2, nonneg  = True) # vector variable
 
-
 obj_func=x[0]+x[1]
 
 constraints = []
