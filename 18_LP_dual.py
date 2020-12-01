@@ -14,11 +14,12 @@ x = cp.Variable(2)
 obj_func = 7*x[0]+12*x[1]
 
 constraints = []
-constraints.append(0.15*x[0]+0.2*x[1]<=200)
-constraints.append(0.1*x[0]+0.2*x[1]<=140)
-constraints.append(2.5*x[0]+4*x[1]<=3200)
-constraints.append(x[0]<=900)
+constraints.append(0.15*x[0]+0.2*x[1]<=200) # machining time
+constraints.append(0.1*x[0]+0.2*x[1]<=140) # forging time
+constraints.append(2.5*x[0]+4*x[1]<=3200) # raw material
+constraints.append(x[0]<=900) 
 constraints.append(x[1]<=600)
+
 constraints.append(x[0]>=0)
 constraints.append(x[1]>=0)
 
@@ -39,5 +40,5 @@ print("optimal (x[0]<=900) dual variable", constraints[3].dual_value)
 print("optimal (x[1]<=600) dual variable", constraints[4].dual_value)
 
 # Reduced costs
-print("optimal (x[0]>=0) dual variable", (-1)*constraints[5].dual_value)
-print("optimal (x[1]>=0) dual variable", (-1)*constraints[6].dual_value)
+print("reduced cost of the 1st primal variable x[0]", (-1)*constraints[5].dual_value)
+print("reduced cost of the 2nd primal variable x[1]", (-1)*constraints[6].dual_value)
