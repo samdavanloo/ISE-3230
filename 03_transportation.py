@@ -25,10 +25,10 @@ obj_func=cp.trace(C.T @ X)  #.T takes transpose of a matrix, @ represents matrix
 
 constraints = []
 for j in range(n):
-    constraints.append(cp.sum(X[:,j], axis=0, keepdims=True)==R[0,j]) # axis=0 sums over rows for each column
+    constraints.append(cp.sum(X[:,j], axis=0, keepdims=True)==R[0,j]) # axis=0 sums over rows for each column j
 
 for i in range(m):
-    constraints.append(cp.sum(X[i,:])<=W[i]) # axis=1 sums over columns for each row
+    constraints.append(cp.sum(X[i,:])<=W[i]) # axis=1 sums over columns for each row i
     #constraints.append(X[i,0]+X[i,1]+X[i,2]+X[i,3]<=W[i])
     
 problem = cp.Problem(cp.Minimize(obj_func), constraints)

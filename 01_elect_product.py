@@ -22,6 +22,7 @@ obj_func=x[0]+x[1]
 
 problem = cp.Problem(cp.Maximize(obj_func), constraints)
 
+#problem.solve(verbose = True)
 #problem.solve(solver=cp.CVXOPT,verbose = True) #verbose parameter determines showing/not showing the output
 problem.solve(solver=cp.GUROBI,verbose = True)
 

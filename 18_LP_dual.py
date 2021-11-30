@@ -40,5 +40,8 @@ print("optimal (x[0]<=900) dual variable", constraints[3].dual_value)
 print("optimal (x[1]<=600) dual variable", constraints[4].dual_value)
 
 # Reduced costs
-print("reduced cost of the 1st primal variable x[0]", (-1)*constraints[5].dual_value)
-print("reduced cost of the 2nd primal variable x[1]", (-1)*constraints[6].dual_value)
+print("reduced cost of the 1st primal variable x[0]", constraints[5].dual_value)
+print("reduced cost of the 2nd primal variable x[1]", constraints[6].dual_value)
+
+# Note that if the problem was minimization in the cacinical form, to get the reduced costs
+# we had to multiply the dual values by -1.

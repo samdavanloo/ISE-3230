@@ -39,7 +39,7 @@ constraints.append(w[2]<=50)
 problem = cp.Problem(cp.Minimize(obj_func), constraints)
 
 #problem.solve(solver=cp.CVXOPT,verbose = True)
-problem.solve(verbose = True)
+#problem.solve(verbose = True)
 problem.solve(solver=cp.GUROBI,verbose = True)
 
 print("obj_func =")

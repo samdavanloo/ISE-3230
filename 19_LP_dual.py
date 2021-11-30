@@ -41,3 +41,6 @@ print("reduced cost of the 1st primal variable x[0] ", constraints[2].dual_value
 print("reduced cost of the 2nd primal variable x[1] ", constraints[3].dual_value)
 print("reduced cost of the 2nd primal variable x[2] ", constraints[4].dual_value)
 print("reduced cost of the 2nd primal variable x[3] ", constraints[5].dual_value)
+
+# Note that if the problem was minimization in the cacinical form, to get the reduced costs
+# we had to multiply the dual values by -1.
